@@ -139,8 +139,18 @@ Create the following repository interfaces:
 
 ```java
 
+package com.example.library.repository;
+
 public interface AuthorRepository extends JpaRepository<Author, Long> {
 }
+
+```
+
+2. BookRepository.java
+
+```java
+
+package com.example.library.repository;
 
 public interface BookRepository extends JpaRepository<Book, Long> {
 }
@@ -153,6 +163,9 @@ Create the following service classes:
 1. LibraryService.java
 
 ```java
+
+package com.example.library.service;
+
 @Service
 public interface LibraryService {
 
@@ -182,6 +195,9 @@ Create the following REST controllers:
 1. AuthorController.java
 
 ```java
+
+package com.example.library.controller;
+
 @RestController
 @RequestMapping("/api/authors")
 public class AuthorController {
@@ -206,6 +222,14 @@ public class AuthorController {
     public ResponseEntity<Void> deleteAuthor(@PathVariable Long id) {
     }
 }
+
+```
+
+2. BookController.java
+
+```java
+
+package com.example.library.controller;
 
 @RestController
 @RequestMapping("/api/books")
@@ -233,6 +257,7 @@ public class BookController {
     public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
     }
 }
+
 ```
 
 ## Test the Application
