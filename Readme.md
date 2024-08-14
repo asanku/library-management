@@ -117,6 +117,8 @@ public class Author {
     @Id
     private Long id;
     private String name;
+
+    // One author can have multiple books
     private List<Book> books;
 }
 
